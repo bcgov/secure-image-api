@@ -29,7 +29,8 @@
     "nconf": "^0.10.0",
     "passport": "^0.4.0",
     "passport-oauth2": "^1.5.0",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -72,7 +73,9 @@
     "test": "NODE_ENV=test jest __tests__",
     "test:schema": "swagger-cli validate doc/api.yaml",
     "test:watch": "NODE_ENV=test jest __tests__ --watch",
-    "test:lint": "eslint --env node --ext .js src"
+    "test:lint": "eslint --env node --ext .js src",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "jest": {
     "testEnvironment": "node",
@@ -106,5 +109,6 @@
     "description": "RESTfull API for SecureImage.",
     "title": "SecureImage API Docummentation",
     "url": "http://localhost:8080/v1"
-  }
+  },
+  "snyk": true
 }
